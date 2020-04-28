@@ -1,0 +1,16 @@
+```yaml
+kx
+kn
+k delete all --all # with caution!!!
+k apply -f 0-nginx-all.yaml
+k get all
+# where is the ingress?
+k get ingress # ingress objects are not namespaced
+k get events
+k get events -A
+k get events -n <namespace name>
+k logs nginx-<press tab>
+k describe pod nginx-<press tab>
+k describe deployment nginx
+k describe replicasets nginx-<press tab>
+```
