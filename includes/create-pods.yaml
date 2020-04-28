@@ -10,3 +10,13 @@ k run --restart=Never <pod name> --image=<image name> --dry-run -o yaml > <podna
 or (new school with --dry-run=client)
 
 k run nginx-pod --image=nginx -o yaml --dry-run=client > nginx-pod.yaml
+
+k create -f nginx-pod.yaml
+
+k describe pod nginx-pod
+
+k get events
+
+or 
+
+kgel
