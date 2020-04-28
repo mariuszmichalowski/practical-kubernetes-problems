@@ -1,4 +1,3 @@
-```yaml
 kx
 kn
 k delete all --all # with caution!!!
@@ -13,4 +12,4 @@ k logs nginx-<press tab>
 k describe pod nginx-<press tab>
 k describe deployment nginx
 k describe replicasets nginx-<press tab>
-```
+
