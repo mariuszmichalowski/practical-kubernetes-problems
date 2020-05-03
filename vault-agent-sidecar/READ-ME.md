@@ -1,3 +1,4 @@
+```bash
 git clone https://github.com/hashicorp/vault-helm.git
 helm3 install vault ./vault-helm --set "server.dev.enabled=true"
 kubectl exec -it vault-0 /bin/sh
@@ -38,3 +39,4 @@ k exec orgchart-69697d9598-p7wfc -c orgchart -- ls /vault/secrets
 
 Inject secrets into the pod
 
+```
