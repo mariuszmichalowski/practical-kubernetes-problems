@@ -1,3 +1,7 @@
+# Vault Agent Injector Example
+
+https://learn.hashicorp.com/vault/getting-started-k8s/sidecar#apply-a-template-to-the-injected-secrets
+
 ```bash
 git clone https://github.com/hashicorp/vault-helm.git
 helm3 install vault ./vault-helm --set "server.dev.enabled=true"
