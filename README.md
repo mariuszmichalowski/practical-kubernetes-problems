@@ -1,6 +1,6 @@
 # Practical Kubernetes Problems
 
-This repo provides some resources to learn Kubernetes through practical exercises for our Kubernauts' Kubernetes trainings or for self study to learn how easy it is to understand and master Kubernetes complexity and problems.
+This repo provides some resources to learn Kubernetes through practical exercises for the [Practical Kubernetes Training](https://trainings.kubernauts.sh/) for self study to learn how easy it is to understand and master Kubernetes complexity and problems.
 
 Kubernetes is easy to understand, even if it looks hard at the first look on the icons or the resources map, this course is about to help you to understand K8s and learn how to start!
 
