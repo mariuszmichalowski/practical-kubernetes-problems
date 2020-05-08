@@ -5,7 +5,13 @@ https://learn.hashicorp.com/vault/getting-started-k8s/sidecar#apply-a-template-t
 ```bash
 git clone https://github.com/hashicorp/vault-helm.git
 helm3 install vault ./vault-helm --set "server.dev.enabled=true"
+or
+helm3 install vault ./vault-helm --set "server.ha.enabled=true"
+kubectl get pods
 kubectl exec -it vault-0 /bin/sh
+vault auth enable userpass
+vault write auth/userpass/users/testuser password=kubernauts policies=admins
+kubectl port-forward vault-0 8200:8200
 vault secrets enable -path=internal kv-v2
 vault kv put internal/database/config username="db-readonly-username" password="db-secret-password"
 vault kv get internal/database/config
