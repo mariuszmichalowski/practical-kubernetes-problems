@@ -9,7 +9,7 @@ This is a working WIP which might help to deploy Vault in DEV and HA mode on Kub
 git clone https://github.com/hashicorp/vault-helm.git
 helm3 install vault ./addons/vault-helm --set "server.dev.enabled=true"
 
-# --> continue with the main README.md
+# --> Please continue with the main README.md
 ```
 
 ## HA mode, maybe for Production
@@ -27,13 +27,13 @@ kubectl get pods -l app.kubernetes.io/name=vault -w
 
 kubectl exec -ti vault-0 -- vault operator init
 
-Unseal Key 1: 296nki/aD+FBeh9W59nCjZzrEe9B5SoHmr986jKfjgkd
-Unseal Key 2: Mfg0rAJX4i2c+9lPBQ3VE3xQGp0dPP2ABszg2HIeodFV
-Unseal Key 3: gDT1i9wM9sAHX05SEoWRVbh+5FFrBIvY5MV0R97Cgo+e
-Unseal Key 4: xVQzgQGmD5aPQCLXZvljiVNm7H/HmsoL//a42HgRi419
-Unseal Key 5: EMZ4X/wfx4kmp/WUQZZQr3zbdYFnR4szaP1URid9vQe4
+Unseal Key 1: KinLA5oXaYpM1xZV8DYYmLqrlE9/2xwdGR562Ru/Ori9
+Unseal Key 2: 2JSiir7xiGw++HIMf+ISCggCVXhyQ7ot07NcUwfGDVD/
+Unseal Key 3: uo8q4KVs0Ywh5AeTJwzKM8javZsufdulgIz4iORFKFE+
+Unseal Key 4: RVHqDRppsTzSlbCP7qeKlQiiuptFwIFsiSDEg5fHBYkr
+Unseal Key 5: 32uq6mCP6QYHfuvW9gFTB7UTWl5TtMc77e2rJzy+lHPI
 
-Initial Root Token: s.dbiPqNdPhSRjdghBqeD2YL38
+Initial Root Token: s.JaZ9CB0q2MEdXOp9axGuO3VX
 
 ## Unseal the first vault server until it reaches the key threshold
 kubectl exec -ti vault-0 -- vault operator unseal # ... Unseal Key 1
@@ -45,7 +45,7 @@ Repeat the above for vault-1 and vault-2.
 kubectl exec -it vault-0 /bin/sh
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-export VAULT_TOKEN=s.dbiPqNdPhSRjdghBqeD2YL38
+export VAULT_TOKEN=s.JaZ9CB0q2MEdXOp9axGuO3VX
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 vault auth enable kubernetes
@@ -97,7 +97,9 @@ k exec orgchart-69697d9598-p7wfc -c orgchart -- ls /vault/secrets
 
 ....
 
-# --> continue with the main README.md
+# --> Please continue with the main README.md
+```
+
 
 # Related Links
 
@@ -112,4 +114,6 @@ https://www.hashicorp.com/blog/vault-integrated-storage-ga/
 https://www.vaultproject.io/docs/concepts/policies.html
 
 https://www.vaultproject.io/docs/auth/kubernetes.html
+
+https://github.com/aws-samples/aws-workshop-for-kubernetes/tree/master/04-path-security-and-networking/401-configmaps-and-secrets#secrets-using-vault
 
