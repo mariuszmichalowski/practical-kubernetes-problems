@@ -3,17 +3,16 @@ kind: Deployment
 metadata:
   name: website
   labels:
-    app: vault-agent-injector-demo
+    app: website
 spec:
   selector:
     matchLabels:
-      app: vault-agent-injector-demo
+      app: website
   replicas: 1
   template:
     metadata:
       annotations:
         vault.hashicorp.com/agent-inject: "true"
-        vault.hashicorp.com/agent-inject-status: "update"
         vault.hashicorp.com/role: "internal-app"
         vault.hashicorp.com/agent-inject-secret-database-config.txt: "internal/data/database/config"
         vault.hashicorp.com/agent-inject-template-database-config.txt: |
@@ -21,10 +20,10 @@ spec:
           postgresql://{{ .Data.data.username }}:{{ .Data.data.password }}@postgres:5432/wizard
           {{- end -}}
       labels:
-        app: vault-agent-injector-demo
+        app: website
     spec:
       # This service account does not have permission to request the secrets.
-      serviceAccountName: external-app
+      serviceAccountName: website
       containers:
         - name: website
           image: jweissig/app:0.0.1
@@ -32,4 +31,4 @@ spec:
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: external-app
+  name: website
