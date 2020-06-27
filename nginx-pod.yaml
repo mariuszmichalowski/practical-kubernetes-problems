@@ -9,7 +9,12 @@ spec:
   containers:
   - image: nginx
     name: nginx-pod
-    resources: {}
+    resources:
+      limits:
+        memory: 512Mi
+        cpu: 500m
+      requests:
+        memory: 256Mi
   dnsPolicy: ClusterFirst
   restartPolicy: Always
 status: {}
