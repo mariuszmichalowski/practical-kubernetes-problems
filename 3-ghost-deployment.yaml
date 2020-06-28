@@ -6,7 +6,7 @@ metadata:
   labels:
     run: ghost
   name: ghost
-  namespace: default
+#  namespace: arash2
 spec:
   replicas: 1 
   selector:
@@ -21,3 +21,9 @@ spec:
       - image: ghost:latest
         imagePullPolicy: IfNotPresent
         name: ghost
+        resources:
+          limits:
+            memory: 512Mi
+            cpu: 500m
+          requests:
+            memory: 256Mi      
