@@ -6,7 +6,6 @@ metadata:
   labels:
     run: ghost
   name: ghost
-  namespace: default
 spec:
   replicas: 1 
   selector:
@@ -18,6 +17,12 @@ spec:
         run: ghost
     spec:
       containers:
-      - image: ghost:latest
+      - image: kubernautslabs/ghost:latest
         imagePullPolicy: IfNotPresent
         name: ghost
+        resources:
+          limits:
+            memory: 512Mi
+            cpu: 500m
+          requests:
+            memory: 256Mi      
