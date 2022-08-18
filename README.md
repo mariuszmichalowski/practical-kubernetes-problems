@@ -69,6 +69,8 @@ https://kubernetes.io/docs/reference/kubectl/cheatsheet/
 
 https://github.com/dennyzhang/cheatsheet-kubernetes-A4
 
+https://spacelift.io/blog/kubernetes-cheat-sheet
+
 <details><summary>Expand here to see the solution</summary>
 <p>
 
